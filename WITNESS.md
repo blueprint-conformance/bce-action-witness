@@ -22,9 +22,9 @@ then removes it. Run URLs and observed outcomes are appended only after GitHub h
 
 | Stage | Commit | GitHub Actions evidence | Observed result |
 |---|---|---|---|
-| clean | _pending current PR run_ | _pending_ | expected score 100 / pass |
-| planted drift | _pending current PR run_ | _pending_ | expected score 60 with `forbidden-dependency-axios`; non-blocking under committed advisory posture |
-| corrected | _pending current PR run_ | _pending_ | expected score 100 / pass |
+| clean | `093addfffeea3b70016478578989997e8a3e5a46` | [run 33497921200](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/33497921200) | Action downloaded the immutable BCE commit, built its own engine on Node 22, and reported score 100 / pass |
+| planted drift | `5eecf7741c35c1320bc8db2dc35047b4e4be7e87` | [run 33497995578](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/33497995578) | score 60; `forbidden-dependency-axios` at `src/billing.extension.ts#L1`; visibly RED but non-blocking under committed advisory posture |
+| corrected | `d4feab2b2064cb3c15dbdc1d3994db4e80f4ef3a` | [run 33498058816](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/33498058816) | same Action and blueprint returned to score 100 / pass |
 
 These runs establish external-repository execution and RED/GREEN discrimination. They do not
 establish independent-human usability.
