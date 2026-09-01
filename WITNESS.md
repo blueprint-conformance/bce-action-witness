@@ -17,14 +17,14 @@ This record distinguishes two claims:
 
 ## Creator-maintained external Action runs
 
-The sequence begins with a clean source change, then plants a direct `axios` import, then removes it.
-Run URLs and observed outcomes are appended only after GitHub has executed them.
+The sequence begins with a clean documentation-only change, then plants a direct `axios` import,
+then removes it. Run URLs and observed outcomes are appended only after GitHub has executed them.
 
 | Stage | Commit | GitHub Actions evidence | Observed result |
 |---|---|---|---|
-| clean | `cab5e06449adc34e80600f949ec26a553ba9e6d0` | [run 33496925176](https://github.com/odinlabs-ai/bce-action-witness/actions/runs/33496925176) | Action downloaded the immutable BCE commit, built its own engine on Node 22, and reported score 100 / pass |
-| planted drift | `12a082745bc6c15b4ce78c806463a279216d02aa` | [run 33497018340](https://github.com/odinlabs-ai/bce-action-witness/actions/runs/33497018340) | score 60; `forbidden-dependency-axios` at `src/billing.extension.ts#L1`; visibly RED but non-blocking under committed advisory posture |
-| corrected | `d7012ee87eefd0fa57adb20ae9cac26ae9cc2e49` | [run 33497122787](https://github.com/odinlabs-ai/bce-action-witness/actions/runs/33497122787) | same Action and blueprint returned to score 100 / pass |
+| clean | `093addfffeea3b70016478578989997e8a3e5a46` | [run 33497921200](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/33497921200) | Action downloaded the immutable BCE commit, built its own engine on Node 22, and reported score 100 / pass |
+| planted drift | `5eecf7741c35c1320bc8db2dc35047b4e4be7e87` | [run 33497995578](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/33497995578) | score 60; `forbidden-dependency-axios` at `src/billing.extension.ts#L1`; visibly RED but non-blocking under committed advisory posture |
+| corrected | `d4feab2b2064cb3c15dbdc1d3994db4e80f4ef3a` | [run 33498058816](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/33498058816) | same Action and blueprint returned to score 100 / pass |
 
 These runs establish external-repository execution and RED/GREEN discrimination. They do not
 establish independent-human usability.
