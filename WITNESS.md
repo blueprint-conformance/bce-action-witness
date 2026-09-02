@@ -13,7 +13,7 @@ This record distinguishes two claims:
 
 - BCE Action and Git dependency: `blueprint-conformance/bce@5d8a3d96b184ad47d6cdec235f80cde1fb1e9a42`
 - Blueprint: `no-direct-http-client@0.1.0`
-- Posture: advisory, proposed, unratified
+- Posture: advisory, proposed, unratified (advisory table below); **enforced** since 2026-09-03 (second table)
 
 ## Creator-maintained external Action runs
 
@@ -28,6 +28,25 @@ then removes it. Run URLs and observed outcomes are appended only after GitHub h
 
 These runs establish external-repository execution and RED/GREEN discrimination. They do not
 establish independent-human usability.
+
+## Creator-maintained external Action runs — ENFORCED posture (2026-09-03)
+
+The advisory table above proves discrimination but every one of its runs — including
+the planted drift — concluded `success` at the workflow level, because advisory mode
+exits 0 by design. That cannot evidence that BCE *blocks*. So the gate was graduated
+(`bce graduate`, bce-engine@0.1.5; ceremony record `.blueprints/GRADUATION.md`,
+`.bce-mode.json` → `enforced`) and the same three stages were replayed under the
+enforced posture with the same immutable Action pin
+`blueprint-conformance/bce@5d8a3d96b184ad47d6cdec235f80cde1fb1e9a42`.
+
+| Stage | Commit | GitHub Actions evidence | Observed result |
+|---|---|---|---|
+| graduate (clean tree) | `086baf7dc0fe0c6409182dfa3fe3c4ea49ef256e` | [run 33689516050](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/33689516050) | score 100 / pass; workflow conclusion `success` |
+| planted drift (enforced) | `dc29cc2a2d7a97a1d812b3051321bfae40fe5a89` | [run 33689961361](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/33689961361) | `forbidden-dependency-axios` at `src/billing.extension.ts#L1`; the Action step FAILED; workflow conclusion **`failure`** (exit 1) — the build is BLOCKED |
+| corrected | `fa6981192259c45aca582917c15d5f606984e4bf` | [run 33690296051](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/33690296051) | same Action and blueprint returned to score 100 / pass; workflow conclusion `success` |
+
+This establishes external-repository execution AND enforcement (a RED that blocks).
+It still does not establish independent-human usability (creator-maintained).
 
 ## Independent contributor protocol
 
