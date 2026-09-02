@@ -1,3 +1,4 @@
 {
-  "mode": "advisory"
+  "mode": "enforced",
+  "rationaleRef": ".blueprints/GRADUATION.md"
 }
