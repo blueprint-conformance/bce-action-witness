@@ -1,0 +1,513 @@
+{
+  "approval": {
+    "blockers": [],
+    "requirements": [
+      {
+        "role": "blueprint-steward",
+        "stage": "ratify"
+      }
+    ],
+    "status": "eligible"
+  },
+  "artifacts": {
+    "baseBlueprint": {
+      "apiVersion": "blueprint-conformance/v1alpha1",
+      "approvals": [
+        {
+          "role": "blueprint-steward",
+          "stage": "ratify"
+        }
+      ],
+      "architecture": {
+        "components": [],
+        "relationships": [
+          {
+            "allowed": false,
+            "from": "*",
+            "to": "axios",
+            "type": "imports"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "from": "*",
+          "id": "forbidden-dependency-axios",
+          "severity": "critical",
+          "to": "axios",
+          "type": "forbiddenDependency"
+        }
+      ],
+      "evidenceRequirements": [
+        {
+          "onMissing": "block",
+          "required": true,
+          "type": "staticAst"
+        }
+      ],
+      "extraction": {
+        "minFiles": 1,
+        "paths": [
+          "src/**/*.ts"
+        ],
+        "profile": "plugin-surface"
+      },
+      "intentRefs": [
+        "architecture/network-boundary"
+      ],
+      "kind": "EngineeringBlueprint",
+      "metadata": {
+        "id": "no-direct-http-client",
+        "status": "draft",
+        "version": "0.1.0"
+      },
+      "scope": {
+        "paths": [
+          "src/**/*.ts"
+        ],
+        "repositories": [
+          "blueprint-conformance/bce-action-witness"
+        ]
+      }
+    },
+    "graph": {
+      "components": [
+        {
+          "id": "extension:billing",
+          "line": 1,
+          "path": "src/billing.extension.ts",
+          "type": "pluginSurface"
+        }
+      ],
+      "coverage": {
+        "extractor": "ast",
+        "filesScanned": 1,
+        "scannedFiles": [
+          "src/billing.extension.ts"
+        ],
+        "unsupported": [
+          "no cross-module symbol resolution (a tool registered via an imported helper is not followed)",
+          "dynamic/reflective tool registration not detected",
+          "a re-exported forbidden module (barrel import) may be missed"
+        ]
+      },
+      "ctRepoRevision": "0d659f34e849a58285580ded228b0894424e8bd2",
+      "guardEdges": [],
+      "schemaVersion": "1"
+    },
+    "proposal": {
+      "candidate": {
+        "apiVersion": "blueprint-conformance/v1alpha1",
+        "approvals": [
+          {
+            "role": "blueprint-steward",
+            "stage": "ratify"
+          }
+        ],
+        "architecture": {
+          "components": [],
+          "relationships": [
+            {
+              "allowed": false,
+              "from": "*",
+              "to": "axios",
+              "type": "imports"
+            }
+          ]
+        },
+        "constraints": [
+          {
+            "from": "*",
+            "id": "forbidden-dependency-axios",
+            "severity": "critical",
+            "to": "axios",
+            "type": "forbiddenDependency"
+          }
+        ],
+        "evidenceRequirements": [
+          {
+            "onMissing": "block",
+            "required": true,
+            "type": "staticAst"
+          }
+        ],
+        "extraction": {
+          "minFiles": 1,
+          "paths": [
+            "src/**/*.ts"
+          ],
+          "profile": "plugin-surface"
+        },
+        "intentRefs": [
+          "architecture/network-boundary"
+        ],
+        "kind": "EngineeringBlueprint",
+        "metadata": {
+          "id": "no-direct-http-client",
+          "status": "draft",
+          "version": "0.1.0"
+        },
+        "scope": {
+          "paths": [
+            "src/**/*.ts"
+          ],
+          "repositories": [
+            "blueprint-conformance/bce-action-witness"
+          ]
+        }
+      },
+      "context": {
+        "authoritativeIntentRefs": [
+          {
+            "content": "# Governed network dependency boundary\n\nThe witness service must not import axios directly. Its purpose is to demonstrate the named\nforbidden-dependency-axios contract and the enforced gate's RED → correction → GREEN behavior.\nThis contract covers direct imports visible to the plugin-surface extractor. It does not claim\ncomplete runtime egress control, independent usability evidence, or product efficacy.\n",
+            "ref": "architecture/network-boundary",
+            "sha256": "cf53ab49e5cec7d0337cdd44d3540e4d99adb422c96b7e47830dcea703ae8324"
+          }
+        ],
+        "contextDigest": "54eb6f0a9a35a3de547318f39581ef741f9a23938cfd0fa956e397d9f9b235c0",
+        "excluded": {
+          "classes": [
+            "unselected-source-context"
+          ],
+          "paths": []
+        },
+        "files": [],
+        "humanIntent": "# Governed network dependency boundary\n\nThe witness service must not import axios directly. Its purpose is to demonstrate the named\nforbidden-dependency-axios contract and the enforced gate's RED → correction → GREEN behavior.\nThis contract covers direct imports visible to the plugin-surface extractor. It does not claim\ncomplete runtime egress control, independent usability evidence, or product efficacy.\n",
+        "kind": "ProposalContext",
+        "repository": {
+          "identity": "github.com/blueprint-conformance/bce-action-witness",
+          "revision": "0d659f34e849a58285580ded228b0894424e8bd2",
+          "worktreeDigest": "b8e0ce474a31ad4f7090b09d14dbaf9e8af6473c30bfac8aa8127dce962ec5e6"
+        },
+        "schemaVersion": "1"
+      },
+      "digests": {
+        "artifact": "b6d31ddd704ba8ff54e57dfa25b83efde3b6efe8a18217e4092b8c40bcf5adc3",
+        "context": "54eb6f0a9a35a3de547318f39581ef741f9a23938cfd0fa956e397d9f9b235c0",
+        "generation": "8a60470175ba52561d8e7d2e8b8431c1841a9365a1953b14b1fb80f6e740699d",
+        "plan": "da593005c2261cd4355776f4b73e0ed480becc8693c5589b209e7e0606db9edd",
+        "prompt": "52937b01127a174d82c32f14b40b599a1bc551f554706792c34e159216ad79d2",
+        "proposal": "2341bf4a79d3ea175c3765b228bad2f3c9e996a464dd0beb330ebd3a5c7f338e"
+      },
+      "kind": "BlueprintProposal",
+      "plan": {
+        "approvals": [
+          {
+            "role": "blueprint-steward",
+            "stage": "ratify"
+          }
+        ],
+        "architecture": {
+          "components": [],
+          "relationships": [
+            {
+              "allowed": false,
+              "from": "*",
+              "to": "axios",
+              "type": "imports"
+            }
+          ]
+        },
+        "clauses": [
+          {
+            "assertions": [
+              {
+                "alternatives": [],
+                "anchors": [
+                  {
+                    "kind": "intent-reference",
+                    "ref": "architecture/network-boundary",
+                    "sha256": "cf53ab49e5cec7d0337cdd44d3540e4d99adb422c96b7e47830dcea703ae8324"
+                  }
+                ],
+                "basis": "source-backed-intent",
+                "claim": "Review authored clause forbidden-dependency-axios against the cited intent.",
+                "knownBlindSpots": [
+                  "The steward must check that this contract implements the cited intent."
+                ],
+                "uncertainty": {
+                  "level": "high",
+                  "reason": "Author-selected policy; automated preparation does not establish intent correctness."
+                }
+              }
+            ],
+            "constraint": {
+              "from": "*",
+              "id": "forbidden-dependency-axios",
+              "severity": "critical",
+              "to": "axios",
+              "type": "forbiddenDependency"
+            }
+          }
+        ],
+        "contextDigest": "54eb6f0a9a35a3de547318f39581ef741f9a23938cfd0fa956e397d9f9b235c0",
+        "evidenceRequirements": [
+          {
+            "onMissing": "block",
+            "required": true,
+            "type": "staticAst"
+          }
+        ],
+        "extraction": {
+          "minFiles": 1,
+          "paths": [
+            "src/**/*.ts"
+          ],
+          "profile": "plugin-surface"
+        },
+        "kind": "BlueprintDraftPlan",
+        "knownBlindSpots": [
+          "Local authored preparation; no model generation or independent review is claimed."
+        ],
+        "metadata": {
+          "id": "no-direct-http-client",
+          "version": "0.1.0"
+        },
+        "proposalId": "witness-self-ratification-20260906",
+        "schemaVersion": "1",
+        "scope": {
+          "assertions": [
+            {
+              "alternatives": [],
+              "anchors": [
+                {
+                  "kind": "intent-reference",
+                  "ref": "architecture/network-boundary",
+                  "sha256": "cf53ab49e5cec7d0337cdd44d3540e4d99adb422c96b7e47830dcea703ae8324"
+                }
+              ],
+              "basis": "source-backed-intent",
+              "claim": "Review the authored scope against the cited intent.",
+              "knownBlindSpots": [
+                "The steward must check that this contract implements the cited intent."
+              ],
+              "uncertainty": {
+                "level": "high",
+                "reason": "Author-selected policy; automated preparation does not establish intent correctness."
+              }
+            }
+          ],
+          "paths": [
+            "src/**/*.ts"
+          ],
+          "repositories": [
+            "blueprint-conformance/bce-action-witness"
+          ]
+        }
+      },
+      "proposalId": "witness-self-ratification-20260906",
+      "schemaVersion": "1"
+    },
+    "repositoryPolicyDiff": {
+      "baseHeadRevision": "e3f1aa32ca9cb60753655bec73d74e5269994ed9",
+      "baseRef": "main",
+      "baseRevision": "e3f1aa32ca9cb60753655bec73d74e5269994ed9",
+      "complete": true,
+      "files": []
+    },
+    "sourceProof": {
+      "blueprintDigest": "b6d31ddd704ba8ff54e57dfa25b83efde3b6efe8a18217e4092b8c40bcf5adc3",
+      "cases": [
+        {
+          "allowedCollateralConstraints": [],
+          "constraintId": "forbidden-dependency-axios",
+          "expectedEvidencePath": "src/billing.extension.ts",
+          "graph": {
+            "components": [
+              {
+                "id": "extension:billing",
+                "line": 1,
+                "path": "src/billing.extension.ts",
+                "type": "pluginSurface"
+              }
+            ],
+            "coverage": {
+              "extractor": "ast",
+              "filesScanned": 1,
+              "scannedFiles": [
+                "src/billing.extension.ts"
+              ],
+              "unsupported": [
+                "no cross-module symbol resolution (a tool registered via an imported helper is not followed)",
+                "dynamic/reflective tool registration not detected",
+                "a re-exported forbidden module (barrel import) may be missed"
+              ]
+            },
+            "ctRepoRevision": "extractor-teeth:plant-direct-http-import",
+            "guardEdges": [
+              {
+                "evidenceRef": "src/billing.extension.ts#L6",
+                "from": "extension:billing",
+                "to": "axios",
+                "type": "imports"
+              }
+            ],
+            "schemaVersion": "1"
+          }
+        }
+      ],
+      "manifestJson": "{\n  \"allowedMutationRoots\": [\n    \"src\"\n  ],\n  \"blueprintRef\": \"no-direct-http-client@0.1.0\",\n  \"cases\": [\n    {\n      \"allowedCollateralConstraints\": [],\n      \"constraintId\": \"forbidden-dependency-axios\",\n      \"expectedEvidencePath\": \"src/billing.extension.ts\",\n      \"id\": \"plant-direct-http-import\",\n      \"operation\": {\n        \"content\": \"\\nimport axios from \\\"axios\\\";\\n\",\n        \"kind\": \"appendText\",\n        \"preconditionSha256\": \"e74940d05969bd7dc2453bf6aaedd104efe9f812b54651404d83b7f2621460de\",\n        \"target\": \"src/billing.extension.ts\"\n      }\n    }\n  ],\n  \"schemaVersion\": \"1\"\n}\n",
+      "sourceTreeDigest": "21b6271c8292e2b342b3793f0af8b0f971056b604b65766685e62540bc485146"
+    }
+  },
+  "conformance": {
+    "blueprintRef": "no-direct-http-client@0.1.0",
+    "coverage": {
+      "extractor": "ast",
+      "filesScanned": 1,
+      "unsupported": [
+        "no cross-module symbol resolution (a tool registered via an imported helper is not followed)",
+        "dynamic/reflective tool registration not detected",
+        "a re-exported forbidden module (barrel import) may be missed"
+      ]
+    },
+    "ctRepoRevision": "0d659f34e849a58285580ded228b0894424e8bd2",
+    "evidenceRef": "architecture-graph.json@sha256:f63fac962becc646e658bae8768f458a99fe8693209ea8c3bf5194e0c3a0d1a6",
+    "repo": "github.com/blueprint-conformance/bce-action-witness",
+    "schemaVersion": "1",
+    "score": 100,
+    "summary": "1 constraint(s) evaluated; 0 violation(s); score 100",
+    "verdict": "pass",
+    "violations": []
+  },
+  "contract": {
+    "blueprintRef": "no-direct-http-client@0.1.0",
+    "clauses": [
+      {
+        "canonicalJson": "{\n  \"from\": \"*\",\n  \"id\": \"forbidden-dependency-axios\",\n  \"severity\": \"critical\",\n  \"to\": \"axios\",\n  \"type\": \"forbiddenDependency\"\n}\n",
+        "constraintId": "forbidden-dependency-axios",
+        "lens": {
+          "matchedScope": [
+            "src/billing.extension.ts"
+          ],
+          "summary": "The plugin-surface extractor observes src/**/*.ts."
+        },
+        "limits": [
+          "The mutation proves evaluator refutability only; it is not extractor-real evidence.",
+          "The steward must check that this contract implements the cited intent.",
+          "a re-exported forbidden module (barrel import) may be missed",
+          "dynamic/reflective tool registration not detected",
+          "no cross-module symbol resolution (a tool registered via an imported helper is not followed)"
+        ],
+        "plainLanguage": "Forbid * from importing axios.",
+        "promise": "Forbid * from importing axios as an enforceable critical-severity architectural promise.",
+        "proof": {
+          "gradeability": "graded",
+          "summary": "add a forbidden edge extension:billing -> axios — the exact drift a real bad PR introduces — evaluator-only: the injected evidence is synthetic (the extractor recorded none in this tree), so this proves the EVALUATOR can refute the constraint, not that it has real-world teeth",
+          "teeth": "EVALUATOR_REFUTABLE"
+        },
+        "severity": "critical",
+        "type": "forbiddenDependency"
+      }
+    ],
+    "intent": [
+      "architecture/network-boundary"
+    ],
+    "plainLanguageContract": "no-direct-http-client contains 1 draft architectural clause(s) over blueprint-conformance/bce-action-witness.",
+    "resolvedScope": {
+      "declaredPaths": [
+        "src/**/*.ts"
+      ],
+      "excludedClasses": [
+        "unselected-source-context"
+      ],
+      "excludedPaths": [],
+      "matchedFiles": [
+        "src/billing.extension.ts"
+      ],
+      "repositories": [
+        "blueprint-conformance/bce-action-witness"
+      ]
+    },
+    "schemaVersion": "1",
+    "unsupportedCoverage": [
+      "Local authored preparation; no model generation or independent review is claimed.",
+      "The steward must check that this contract implements the cited intent.",
+      "a re-exported forbidden module (barrel import) may be missed",
+      "dynamic/reflective tool registration not detected",
+      "no cross-module symbol resolution (a tool registered via an imported helper is not followed)"
+    ]
+  },
+  "identity": {
+    "engine": {
+      "artifactDigest": "c7a8732d9a2bae2495492821672ef5f1890357a0b9eb6bd8c5b900e77d75e5ea",
+      "name": "bce-engine",
+      "sourceRevision": "source-revision-unavailable",
+      "version": "0.3.0"
+    },
+    "extractor": {
+      "artifactDigest": "c7a8732d9a2bae2495492821672ef5f1890357a0b9eb6bd8c5b900e77d75e5ea",
+      "kind": "ast",
+      "profile": "plugin-surface",
+      "provider": "typescript-ts-morph",
+      "version": "0.3.0"
+    },
+    "repository": {
+      "identity": "github.com/blueprint-conformance/bce-action-witness",
+      "revision": "0d659f34e849a58285580ded228b0894424e8bd2",
+      "worktreeDigest": "b8e0ce474a31ad4f7090b09d14dbaf9e8af6473c30bfac8aa8127dce962ec5e6"
+    },
+    "toolchain": {
+      "arch": "arm64",
+      "dependencyLockDigest": "b7c2b54bc13afbfd0478e52351e1e4edf0509a4998b22b0c6ce8a3b668ed36f5",
+      "packageManager": {
+        "name": "npm",
+        "version": "10.9.7"
+      },
+      "platform": "darwin",
+      "runtime": "node",
+      "version": "22.22.2"
+    }
+  },
+  "kind": "BlueprintReviewPacket",
+  "packetDigest": "13bce874e60bb5f9218951c6e15a315ea1642ecf29f9c3e27ce8db0505e7dac7",
+  "proof": {
+    "blueprintRef": "no-direct-http-client@0.1.0",
+    "evaluatorRefutable": 1,
+    "indeterminate": 0,
+    "schemaVersion": "1",
+    "summary": "EVALUATOR-REFUTABLE: 0/1 constraint(s) have extractor-real teeth; 1 refutable by the evaluator alone (synthetic-evidence mutations — NOT evidence of real teeth; substance proof = a mutation corpus); 0 trivially-green, 0 indeterminate",
+    "toothed": 0,
+    "triviallyGreen": 0,
+    "verdict": "evaluator-refutable",
+    "witnesses": [
+      {
+        "constraintId": "forbidden-dependency-axios",
+        "mutation": "add a forbidden edge extension:billing -> axios — the exact drift a real bad PR introduces — evaluator-only: the injected evidence is synthetic (the extractor recorded none in this tree), so this proves the EVALUATOR can refute the constraint, not that it has real-world teeth",
+        "type": "forbiddenDependency",
+        "verdict": "EVALUATOR_REFUTABLE"
+      }
+    ]
+  },
+  "proposalId": "witness-self-ratification-20260906",
+  "provenance": {
+    "baseDigest": "b6d31ddd704ba8ff54e57dfa25b83efde3b6efe8a18217e4092b8c40bcf5adc3",
+    "candidateDigest": "b6d31ddd704ba8ff54e57dfa25b83efde3b6efe8a18217e4092b8c40bcf5adc3",
+    "contextDigest": "54eb6f0a9a35a3de547318f39581ef741f9a23938cfd0fa956e397d9f9b235c0",
+    "engineDigest": "89632adc92664620e68260dcf86d145890f3d5a57f269d8f45c3000e5f933a8a",
+    "extractorDigest": "6c5b16e602fa668cafaf315505986b96a57147e81ac59b1149fdd34766c04454",
+    "generationDigest": "8a60470175ba52561d8e7d2e8b8431c1841a9365a1953b14b1fb80f6e740699d",
+    "graphDigest": "f63fac962becc646e658bae8768f458a99fe8693209ea8c3bf5194e0c3a0d1a6",
+    "planDigest": "da593005c2261cd4355776f4b73e0ed480becc8693c5589b209e7e0606db9edd",
+    "promptDigest": "52937b01127a174d82c32f14b40b599a1bc551f554706792c34e159216ad79d2",
+    "proposalDigest": "2341bf4a79d3ea175c3765b228bad2f3c9e996a464dd0beb330ebd3a5c7f338e",
+    "reportDigest": "ebf724e5d20b558df33e01a5bbb9590ca4389b0379d1545b6256ab9edc3338c2",
+    "repositoryPolicyDiffDigest": "c63a6034c1164768d4b3135f2cb3e05e587674b5c4af0eeabbd2780dca9048b2",
+    "teethDigest": "f8f3c969fca58616a3415e953291e3224419e4499d17c3f29a4c166dd4736dd9",
+    "toolchainDigest": "e7d0184546d40700dcef65df12b90147a03f54515e74128e47d6b507c8384d01"
+  },
+  "schemaVersion": "1",
+  "semanticDiff": {
+    "blocksApproval": false,
+    "changes": [],
+    "classification": "neutral",
+    "schemaVersion": "1"
+  },
+  "unsupportedCoverage": [
+    "Local authored preparation; no model generation or independent review is claimed.",
+    "The steward must check that this contract implements the cited intent.",
+    "a re-exported forbidden module (barrel import) may be missed",
+    "dynamic/reflective tool registration not detected",
+    "no cross-module symbol resolution (a tool registered via an imported helper is not followed)"
+  ]
+}

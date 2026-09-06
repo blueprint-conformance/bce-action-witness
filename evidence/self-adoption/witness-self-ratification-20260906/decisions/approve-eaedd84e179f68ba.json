@@ -1,0 +1,34 @@
+{
+  "binding": {
+    "candidateDigest": "b6d31ddd704ba8ff54e57dfa25b83efde3b6efe8a18217e4092b8c40bcf5adc3",
+    "engineArtifactDigest": "c7a8732d9a2bae2495492821672ef5f1890357a0b9eb6bd8c5b900e77d75e5ea",
+    "extractorArtifactDigest": "c7a8732d9a2bae2495492821672ef5f1890357a0b9eb6bd8c5b900e77d75e5ea",
+    "packetDigest": "13bce874e60bb5f9218951c6e15a315ea1642ecf29f9c3e27ce8db0505e7dac7",
+    "repositoryRevision": "0d659f34e849a58285580ded228b0894424e8bd2",
+    "toolchainDigest": "e7d0184546d40700dcef65df12b90147a03f54515e74128e47d6b507c8384d01",
+    "worktreeDigest": "b8e0ce474a31ad4f7090b09d14dbaf9e8af6473c30bfac8aa8127dce962ec5e6"
+  },
+  "decidedAt": "2026-09-06T15:31:37Z",
+  "decision": "approve",
+  "decisionDigest": "eaedd84e179f68ba623aa740ae19b66e89635793af046d986b6601a58ef6300b",
+  "kind": "BlueprintDecisionRecord",
+  "proposalId": "witness-self-ratification-20260906",
+  "rationale": "I ratify the no-direct-http-client draft as approved version 0.1.1 as the repository solo steward. The critical direct-axios constraint and its scope are unchanged, and the real source mutation proof kills the planted import. Existing enforced mode and the historical graduation remain intact. This decision is self-ratified; independent review and product efficacy are not claimed. The coding agent executes this recorded transition under my authorization.",
+  "reviewer": {
+    "authentication": {
+      "assertionDigest": "7e48ce78b2cbd1dc36a00b63308a3d9f7619537ca45f5f699a1e368383dc978a",
+      "issuer": "https://github.com",
+      "method": "scm",
+      "reference": "https://github.com/blueprint-conformance/bce-action-witness/pull/4#pullrequestreview-5125803495",
+      "reviewMode": "self-ratified",
+      "subject": "github:user:243248197"
+    },
+    "id": "github:user:243248197"
+  },
+  "satisfiedRequirement": {
+    "role": "blueprint-steward",
+    "stage": "ratify"
+  },
+  "schemaVersion": "1",
+  "weakeningAccepted": false
+}

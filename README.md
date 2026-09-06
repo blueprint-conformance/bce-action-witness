@@ -21,6 +21,6 @@ npx --no-install bce gate --repo . --all
 ```
 
 Policy files, mode, baseline, workflow, and engine pins require explicit human review. The initial
-onboarding state was advisory and unratified. The current gate is enforced; ratification remains
-pending until the authenticated ceremony is recorded. The source dependency uses an exact public
+onboarding state was advisory and unratified. The current gate is enforced and its blueprint is approved at `0.1.1`, with
+[authenticated self-ratification](evidence/self-adoption/README.md) and matching lifecycle records. The source dependency uses an exact public
 HTTPS Git commit and needs Node 22+.

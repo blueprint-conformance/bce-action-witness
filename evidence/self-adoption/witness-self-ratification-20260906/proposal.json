@@ -1,0 +1,203 @@
+{
+  "candidate": {
+    "apiVersion": "blueprint-conformance/v1alpha1",
+    "approvals": [
+      {
+        "role": "blueprint-steward",
+        "stage": "ratify"
+      }
+    ],
+    "architecture": {
+      "components": [],
+      "relationships": [
+        {
+          "allowed": false,
+          "from": "*",
+          "to": "axios",
+          "type": "imports"
+        }
+      ]
+    },
+    "constraints": [
+      {
+        "from": "*",
+        "id": "forbidden-dependency-axios",
+        "severity": "critical",
+        "to": "axios",
+        "type": "forbiddenDependency"
+      }
+    ],
+    "evidenceRequirements": [
+      {
+        "onMissing": "block",
+        "required": true,
+        "type": "staticAst"
+      }
+    ],
+    "extraction": {
+      "minFiles": 1,
+      "paths": [
+        "src/**/*.ts"
+      ],
+      "profile": "plugin-surface"
+    },
+    "intentRefs": [
+      "architecture/network-boundary"
+    ],
+    "kind": "EngineeringBlueprint",
+    "metadata": {
+      "id": "no-direct-http-client",
+      "status": "draft",
+      "version": "0.1.0"
+    },
+    "scope": {
+      "paths": [
+        "src/**/*.ts"
+      ],
+      "repositories": [
+        "blueprint-conformance/bce-action-witness"
+      ]
+    }
+  },
+  "context": {
+    "authoritativeIntentRefs": [
+      {
+        "content": "# Governed network dependency boundary\n\nThe witness service must not import axios directly. Its purpose is to demonstrate the named\nforbidden-dependency-axios contract and the enforced gate's RED → correction → GREEN behavior.\nThis contract covers direct imports visible to the plugin-surface extractor. It does not claim\ncomplete runtime egress control, independent usability evidence, or product efficacy.\n",
+        "ref": "architecture/network-boundary",
+        "sha256": "cf53ab49e5cec7d0337cdd44d3540e4d99adb422c96b7e47830dcea703ae8324"
+      }
+    ],
+    "contextDigest": "54eb6f0a9a35a3de547318f39581ef741f9a23938cfd0fa956e397d9f9b235c0",
+    "excluded": {
+      "classes": [
+        "unselected-source-context"
+      ],
+      "paths": []
+    },
+    "files": [],
+    "humanIntent": "# Governed network dependency boundary\n\nThe witness service must not import axios directly. Its purpose is to demonstrate the named\nforbidden-dependency-axios contract and the enforced gate's RED → correction → GREEN behavior.\nThis contract covers direct imports visible to the plugin-surface extractor. It does not claim\ncomplete runtime egress control, independent usability evidence, or product efficacy.\n",
+    "kind": "ProposalContext",
+    "repository": {
+      "identity": "github.com/blueprint-conformance/bce-action-witness",
+      "revision": "0d659f34e849a58285580ded228b0894424e8bd2",
+      "worktreeDigest": "b8e0ce474a31ad4f7090b09d14dbaf9e8af6473c30bfac8aa8127dce962ec5e6"
+    },
+    "schemaVersion": "1"
+  },
+  "digests": {
+    "artifact": "b6d31ddd704ba8ff54e57dfa25b83efde3b6efe8a18217e4092b8c40bcf5adc3",
+    "context": "54eb6f0a9a35a3de547318f39581ef741f9a23938cfd0fa956e397d9f9b235c0",
+    "generation": "8a60470175ba52561d8e7d2e8b8431c1841a9365a1953b14b1fb80f6e740699d",
+    "plan": "da593005c2261cd4355776f4b73e0ed480becc8693c5589b209e7e0606db9edd",
+    "prompt": "52937b01127a174d82c32f14b40b599a1bc551f554706792c34e159216ad79d2",
+    "proposal": "2341bf4a79d3ea175c3765b228bad2f3c9e996a464dd0beb330ebd3a5c7f338e"
+  },
+  "kind": "BlueprintProposal",
+  "plan": {
+    "approvals": [
+      {
+        "role": "blueprint-steward",
+        "stage": "ratify"
+      }
+    ],
+    "architecture": {
+      "components": [],
+      "relationships": [
+        {
+          "allowed": false,
+          "from": "*",
+          "to": "axios",
+          "type": "imports"
+        }
+      ]
+    },
+    "clauses": [
+      {
+        "assertions": [
+          {
+            "alternatives": [],
+            "anchors": [
+              {
+                "kind": "intent-reference",
+                "ref": "architecture/network-boundary",
+                "sha256": "cf53ab49e5cec7d0337cdd44d3540e4d99adb422c96b7e47830dcea703ae8324"
+              }
+            ],
+            "basis": "source-backed-intent",
+            "claim": "Review authored clause forbidden-dependency-axios against the cited intent.",
+            "knownBlindSpots": [
+              "The steward must check that this contract implements the cited intent."
+            ],
+            "uncertainty": {
+              "level": "high",
+              "reason": "Author-selected policy; automated preparation does not establish intent correctness."
+            }
+          }
+        ],
+        "constraint": {
+          "from": "*",
+          "id": "forbidden-dependency-axios",
+          "severity": "critical",
+          "to": "axios",
+          "type": "forbiddenDependency"
+        }
+      }
+    ],
+    "contextDigest": "54eb6f0a9a35a3de547318f39581ef741f9a23938cfd0fa956e397d9f9b235c0",
+    "evidenceRequirements": [
+      {
+        "onMissing": "block",
+        "required": true,
+        "type": "staticAst"
+      }
+    ],
+    "extraction": {
+      "minFiles": 1,
+      "paths": [
+        "src/**/*.ts"
+      ],
+      "profile": "plugin-surface"
+    },
+    "kind": "BlueprintDraftPlan",
+    "knownBlindSpots": [
+      "Local authored preparation; no model generation or independent review is claimed."
+    ],
+    "metadata": {
+      "id": "no-direct-http-client",
+      "version": "0.1.0"
+    },
+    "proposalId": "witness-self-ratification-20260906",
+    "schemaVersion": "1",
+    "scope": {
+      "assertions": [
+        {
+          "alternatives": [],
+          "anchors": [
+            {
+              "kind": "intent-reference",
+              "ref": "architecture/network-boundary",
+              "sha256": "cf53ab49e5cec7d0337cdd44d3540e4d99adb422c96b7e47830dcea703ae8324"
+            }
+          ],
+          "basis": "source-backed-intent",
+          "claim": "Review the authored scope against the cited intent.",
+          "knownBlindSpots": [
+            "The steward must check that this contract implements the cited intent."
+          ],
+          "uncertainty": {
+            "level": "high",
+            "reason": "Author-selected policy; automated preparation does not establish intent correctness."
+          }
+        }
+      ],
+      "paths": [
+        "src/**/*.ts"
+      ],
+      "repositories": [
+        "blueprint-conformance/bce-action-witness"
+      ]
+    }
+  },
+  "proposalId": "witness-self-ratification-20260906",
+  "schemaVersion": "1"
+}

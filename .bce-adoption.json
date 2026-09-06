@@ -1,5 +1,5 @@
 {
-  "blueprintRef": "no-direct-http-client@0.1.0",
+  "blueprintRef": "no-direct-http-client@0.1.1",
   "engine": "blueprint-conformance/bce@e47d778cf549ce88fc83dfc57dd59bd18cc79eac",
   "generatedFiles": [
     ".bce-mode.json",
@@ -10,7 +10,8 @@
   ],
   "harness": "agents",
   "mode": "enforced",
-  "ratified": false,
+  "ratified": true,
+  "reviewMode": "self-ratified",
   "schemaVersion": "1",
-  "state": "enforced-unratified"
+  "state": "ratified-enforced"
 }

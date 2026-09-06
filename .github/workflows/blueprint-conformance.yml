@@ -1,5 +1,8 @@
 name: blueprint conformance
-on: [pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 permissions:
   contents: read
 jobs:
@@ -14,3 +17,7 @@ jobs:
           engine: local
           repo: .
           comment: "false"
+      - name: Install the exact source-pinned consumer engine
+        run: npm ci
+      - name: Doctor must confirm coherent authenticated adoption
+        run: npx --no-install bce doctor --repo .

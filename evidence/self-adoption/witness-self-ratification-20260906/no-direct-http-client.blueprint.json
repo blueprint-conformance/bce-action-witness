@@ -46,8 +46,8 @@
   "kind": "EngineeringBlueprint",
   "metadata": {
     "id": "no-direct-http-client",
-    "status": "approved",
-    "version": "0.1.1"
+    "status": "draft",
+    "version": "0.1.0"
   },
   "scope": {
     "paths": [
