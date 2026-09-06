@@ -60,3 +60,16 @@ Without private guidance from the maintainer:
 6. Add a short, candid note here: confusing steps, hidden prerequisites, and whether BCE helped.
 
 Do not claim independence if a maintainer supplied missing commands interactively.
+
+## Lifecycle record correction
+
+The original graduation changed actual mode to enforced but left the adoption manifest at
+proposed/advisory. This correction records `enforced-unratified` honestly and preserves the original
+graduation and RED/GREEN evidence. It also updates the blueprint's repository identity after the
+repository transfer and supplies the previously missing `architecture/network-boundary` intent
+file. The direct-axios constraint and critical severity are unchanged. Agent Skills and CODEOWNERS
+are now installed. The committed solo-steward policy enables a subsequent authenticated ceremony;
+this preparation itself does not claim ratification or independent review.
+
+The current Action and Git dependency are pinned to merged BCE source `e47d778cf549ce88fc83dfc57dd59bd18cc79eac`.
+The historical tables above retain their original artifact identities.

@@ -1,0 +1,6 @@
+# Governed network dependency boundary
+
+The witness service must not import axios directly. Its purpose is to demonstrate the named
+forbidden-dependency-axios contract and the enforced gate's RED → correction → GREEN behavior.
+This contract covers direct imports visible to the plugin-surface extractor. It does not claim
+complete runtime egress control, independent usability evidence, or product efficacy.

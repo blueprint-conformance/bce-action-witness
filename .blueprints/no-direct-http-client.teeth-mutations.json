@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1",
+  "blueprintRef": "no-direct-http-client@0.1.0",
+  "allowedMutationRoots": [
+    "src"
+  ],
+  "cases": [
+    {
+      "id": "plant-direct-http-import",
+      "constraintId": "forbidden-dependency-axios",
+      "operation": {
+        "kind": "appendText",
+        "target": "src/billing.extension.ts",
+        "preconditionSha256": "e74940d05969bd7dc2453bf6aaedd104efe9f812b54651404d83b7f2621460de",
+        "content": "\nimport axios from \"axios\";\n"
+      },
+      "expectedEvidencePath": "src/billing.extension.ts",
+      "allowedCollateralConstraints": []
+    }
+  ]
+}

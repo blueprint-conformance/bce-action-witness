@@ -6,10 +6,10 @@ jobs:
   gate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           fetch-depth: 0
-      - uses: blueprint-conformance/bce@5d8a3d96b184ad47d6cdec235f80cde1fb1e9a42
+      - uses: blueprint-conformance/bce@e47d778cf549ce88fc83dfc57dd59bd18cc79eac
         with:
           engine: local
           repo: .
