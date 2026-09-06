@@ -1,6 +1,6 @@
 {
   "blueprintRef": "no-direct-http-client@0.1.0",
-  "engine": "blueprint-conformance/bce@5d8a3d96b184ad47d6cdec235f80cde1fb1e9a42",
+  "engine": "blueprint-conformance/bce@e47d778cf549ce88fc83dfc57dd59bd18cc79eac",
   "generatedFiles": [
     ".bce-mode.json",
     ".blueprints/no-direct-http-client.blueprint.json",
@@ -9,8 +9,8 @@
     "AGENTS.md"
   ],
   "harness": "agents",
-  "mode": "advisory",
+  "mode": "enforced",
   "ratified": false,
   "schemaVersion": "1",
-  "state": "proposed"
+  "state": "enforced-unratified"
 }

@@ -54,7 +54,7 @@
       "src/**/*.ts"
     ],
     "repositories": [
-      "odinlabs-ai/bce-action-witness"
+      "blueprint-conformance/bce-action-witness"
     ]
   }
 }
