@@ -1,0 +1,105 @@
+{
+  "approvals": [
+    {
+      "role": "blueprint-steward",
+      "stage": "ratify"
+    }
+  ],
+  "architecture": {
+    "components": [],
+    "relationships": [
+      {
+        "allowed": false,
+        "from": "*",
+        "to": "axios",
+        "type": "imports"
+      }
+    ]
+  },
+  "clauses": [
+    {
+      "assertions": [
+        {
+          "alternatives": [],
+          "anchors": [
+            {
+              "kind": "intent-reference",
+              "ref": "architecture/network-boundary",
+              "sha256": "cf53ab49e5cec7d0337cdd44d3540e4d99adb422c96b7e47830dcea703ae8324"
+            }
+          ],
+          "basis": "source-backed-intent",
+          "claim": "Review authored clause forbidden-dependency-axios against the cited intent.",
+          "knownBlindSpots": [
+            "The steward must check that this contract implements the cited intent."
+          ],
+          "uncertainty": {
+            "level": "high",
+            "reason": "Author-selected policy; automated preparation does not establish intent correctness."
+          }
+        }
+      ],
+      "constraint": {
+        "from": "*",
+        "id": "forbidden-dependency-axios",
+        "severity": "critical",
+        "to": "axios",
+        "type": "forbiddenDependency"
+      }
+    }
+  ],
+  "contextDigest": "54eb6f0a9a35a3de547318f39581ef741f9a23938cfd0fa956e397d9f9b235c0",
+  "evidenceRequirements": [
+    {
+      "onMissing": "block",
+      "required": true,
+      "type": "staticAst"
+    }
+  ],
+  "extraction": {
+    "minFiles": 1,
+    "paths": [
+      "src/**/*.ts"
+    ],
+    "profile": "plugin-surface"
+  },
+  "kind": "BlueprintDraftPlan",
+  "knownBlindSpots": [
+    "Local authored preparation; no model generation or independent review is claimed."
+  ],
+  "metadata": {
+    "id": "no-direct-http-client",
+    "version": "0.1.0"
+  },
+  "proposalId": "witness-self-ratification-20260906",
+  "schemaVersion": "1",
+  "scope": {
+    "assertions": [
+      {
+        "alternatives": [],
+        "anchors": [
+          {
+            "kind": "intent-reference",
+            "ref": "architecture/network-boundary",
+            "sha256": "cf53ab49e5cec7d0337cdd44d3540e4d99adb422c96b7e47830dcea703ae8324"
+          }
+        ],
+        "basis": "source-backed-intent",
+        "claim": "Review the authored scope against the cited intent.",
+        "knownBlindSpots": [
+          "The steward must check that this contract implements the cited intent."
+        ],
+        "uncertainty": {
+          "level": "high",
+          "reason": "Author-selected policy; automated preparation does not establish intent correctness."
+        }
+      }
+    ],
+    "paths": [
+      "src/**/*.ts"
+    ],
+    "repositories": [
+      "blueprint-conformance/bce-action-witness"
+    ]
+  }
+}

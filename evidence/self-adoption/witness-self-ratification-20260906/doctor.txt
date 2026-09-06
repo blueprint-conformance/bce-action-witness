@@ -1,0 +1,18 @@
+  ✓ runtime/node: Node 22.22.2; required >=22
+  ✓ runtime/engine: bce-engine 0.3.0
+  ✓ blueprints/discovery: 1 blueprint(s) discovered
+  ✓ blueprint/no-direct-http-client/scope: 1 file(s) in scope
+  ✓ blueprint/no-direct-http-client/proof: extractor-real-proven: 1/1 source mutants killed
+  ✓ policy/mode: enforced (committed)
+  ✓ policy/baseline: no baseline; all violations enforced
+  ✓ policy/lifecycle: ratified-enforced: no-direct-http-client@0.1.1; self-ratified
+  ✓ governance/ratification: solo-steward: github:user:243248197; self-ratified, no independent review claimed
+  ✓ governance/codeowners: policy surfaces must have a human-review owner
+  ✓ ci/gate: 1 workflow file(s) inspected
+  ✓ ci/exact-pin: CI should use an immutable engine or Action pin
+  ✓ agents/instructions: agent done-check instructions
+  ✓ agents/mcp: bce-mcp package binary
+  ✓ agents/project-skills: bce + skill-tuning discovered under .agents/skills
+  ✓ agents/mcp-config: bce project server configured in .mcp.json
+  ✓ gate/full-sweep: 1/1 pass
+bce doctor: ready (exit 0)

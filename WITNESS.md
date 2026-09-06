@@ -9,7 +9,7 @@ This record distinguishes two claims:
 2. **Independent-human usability:** not established by the creator-maintained runs below. A future
    contributor must add their own signed-off observation without being coached through the commands.
 
-## Candidate under test
+## Historical candidate under test
 
 - BCE Action and Git dependency: `blueprint-conformance/bce@5d8a3d96b184ad47d6cdec235f80cde1fb1e9a42`
 - Blueprint: `no-direct-http-client@0.1.0`
@@ -73,3 +73,12 @@ this preparation itself does not claim ratification or independent review.
 
 The current Action and Git dependency are pinned to merged BCE source `e47d778cf549ce88fc83dfc57dd59bd18cc79eac`.
 The historical tables above retain their original artifact identities.
+
+## Authenticated self-ratification (2026-09-06)
+
+[The live GitHub ceremony](evidence/self-adoption/README.md) ratified the draft as approved
+`no-direct-http-client@0.1.1`. The critical constraint and scope remain unchanged. Adoption now
+records `ratified-enforced` and `self-ratified`, bound to authenticated policy history. Repeating
+`graduate` preserved the existing enforced mode and original graduation record without inventing
+a new transition. Doctor reports ready and kills the planted direct-axios source mutation.
+This remains creator-maintained evidence; it does not establish independent adoption or efficacy.
