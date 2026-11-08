@@ -48,6 +48,21 @@ enforced posture with the same immutable Action pin
 This establishes external-repository execution AND enforcement (a RED that blocks).
 It still does not establish independent-human usability (creator-maintained).
 
+## Creator-maintained replay — ENFORCED posture at the v0.6.1 Action (2026-11-08)
+
+The same sequence ran on the unmerged draft PR #5 (branch `witness/v0.6.1-enforced`). It used the BCE
+Action at the v0.6.1 source commit `blueprint-conformance/bce@ef5b806dcf58b1100db9ca512c6f7683d3873697`
+and the committed enforced posture. The committed workflow pin on `main` is unchanged; moving it needs
+the human review described in `README.md`.
+
+| Stage | Commit | GitHub Actions evidence | Observed result |
+|---|---|---|---|
+| clean | `eadcd130b2bd909d113cb13006889b70f5b44c15` | [run 42495682999](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/42495682999) | `bce gate [enforced]`: `no-direct-http-client@0.1.1` score 100 / pass; workflow conclusion `success` |
+| planted drift (enforced) | `6335dd361860a1d9a801adee951ea87301882b88` | [run 42495743548](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/42495743548) | score 60; `forbidden-dependency-axios` at `src/billing.extension.ts#L1`; workflow conclusion **`failure`**, so the build is BLOCKED |
+| corrected | `f60aa6b3b96665b08bd42bd869dd7dc95fedb777` | [run 42495801746](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/42495801746) | score 100 / pass; workflow conclusion `success`; `src/` byte-identical to `main` |
+
+This is still creator-maintained. It does not establish independent-human usability.
+
 ## Independent contributor protocol
 
 Without private guidance from the maintainer:
