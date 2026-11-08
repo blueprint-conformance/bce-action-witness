@@ -48,6 +48,20 @@ enforced posture with the same immutable Action pin
 This establishes external-repository execution AND enforcement (a RED that blocks).
 It still does not establish independent-human usability (creator-maintained).
 
+## Creator-maintained replay — ENFORCED posture at the v0.6.2 Action (2026-11-08)
+
+The same sequence ran on the unmerged draft PR #7 (branch `witness/v0.6.2-enforced`). It used the BCE
+Action at the v0.6.2 source commit `blueprint-conformance/bce@17be7a3d25ca1db62be58ce88d6c16d7e35cd3ac`.
+The committed workflow pin on `main` is unchanged.
+
+| Stage | Commit | GitHub Actions evidence | Observed result |
+|---|---|---|---|
+| clean | `0406408` | [run 42499038562](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/42499038562) | `bce gate [enforced]`: score 100 / pass; workflow conclusion `success` |
+| planted drift (enforced) | `7e362fc` | [run 42499103158](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/42499103158) | score 60; `forbidden-dependency-axios` at `src/billing.extension.ts#L1`; workflow conclusion **`failure`**, so the build is BLOCKED |
+| corrected | `f26623e` | [run 42499587692](https://github.com/blueprint-conformance/bce-action-witness/actions/runs/42499587692) | score 100 / pass; workflow conclusion `success`; `src/` byte-identical to `main` |
+
+This is still creator-maintained. It does not establish independent-human usability.
+
 ## Creator-maintained replay — ENFORCED posture at the v0.6.1 Action (2026-11-08)
 
 The same sequence ran on the unmerged draft PR #5 (branch `witness/v0.6.1-enforced`). It used the BCE
