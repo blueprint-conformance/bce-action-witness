@@ -114,7 +114,7 @@ file. The direct-axios constraint and critical severity are unchanged. Agent Ski
 are now installed. The committed solo-steward policy enables a subsequent authenticated ceremony;
 this preparation itself does not claim ratification or independent review.
 
-The current Action and Git dependency are pinned to merged BCE source `e47d778cf549ce88fc83dfc57dd59bd18cc79eac`.
+The current Action and Git dependency are pinned to the v0.6.4 BCE source `a3d89e99197a7f0f92267a6f22fad89667272598`.
 The historical tables above retain their original artifact identities.
 
 ## Authenticated self-ratification (2026-09-06)
