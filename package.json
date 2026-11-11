@@ -11,6 +11,6 @@
   "license": "ISC",
   "private": true,
   "devDependencies": {
-    "bce-engine": "git+https://github.com/blueprint-conformance/bce.git#e47d778cf549ce88fc83dfc57dd59bd18cc79eac"
+    "bce-engine": "git+https://github.com/blueprint-conformance/bce.git#0e0b022a20e458f77118c5adb210e5e26e5a6e82"
   }
 }
