@@ -1,6 +1,6 @@
 {
   "blueprintRef": "no-direct-http-client@0.1.1",
-  "engine": "blueprint-conformance/bce@0e0b022a20e458f77118c5adb210e5e26e5a6e82",
+  "engine": "blueprint-conformance/bce@a3d89e99197a7f0f92267a6f22fad89667272598",
   "generatedFiles": [
     ".bce-mode.json",
     ".blueprints/no-direct-http-client.blueprint.json",
